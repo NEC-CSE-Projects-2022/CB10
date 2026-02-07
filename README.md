@@ -5,7 +5,7 @@ Project Title - Enhanced Multi-Zonal Forest Type Classification
  Environmental Monitoring
 
 ## Team Info
-- 22471A05H8 — **Name** Nakka Vijay Bhasker Reddy ( https://www.linkedin.com/in/nakka-vijay-bhaskar-reddy-6000b7265?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app  )
+- 22471A05H8 —  Nakka Vijay Bhasker Reddy ( https://www.linkedin.com/in/nakka-vijay-bhaskar-reddy-6000b7265?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app  )
 _Work Done: As the team leader, I handled the core parts of the project and guided the overall development process. My responsibilities included:
 
 🔹 Project Planning & Coordination
@@ -48,11 +48,15 @@ Wrote README sections for GitHub
 
 Explained workflow, results, and deployment details
 
-- 22471A05H7 — **Name** Nagaram Prasad Rao (https://www.linkedin.com/in/nagaram-prasad-rao-26a6b7280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app  )
-_Work Done: xxxxxxxxxx_
+- 22471A05H7 —  Nagaram Prasad Rao (https://www.linkedin.com/in/nagaram-prasad-rao-26a6b7280?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app  )
+_Work Done: Prepared detailed project documentation including problem statement, methodology, results, and conclusions.
 
-- 22471A05H6 — **Name** Mundlamuri Vijaya Kumarachari (https://www.linkedin.com/in/vijay-kumarachari-ba2290276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app )
-_Work Done: xxxxxxxxxx_
+Designed and presented a clear, well-structured PPT highlighting project objectives, workflow, and outcomes.
+
+- 22471A05H6 —  Mundlamuri Vijaya Kumarachari (https://www.linkedin.com/in/vijay-kumarachari-ba2290276?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app )
+_Work Done: Developed a responsive and user-friendly frontend interface using modern UI components.
+
+Integrated frontend pages with project features ensuring smooth navigation and consistent design.
 
 
 
