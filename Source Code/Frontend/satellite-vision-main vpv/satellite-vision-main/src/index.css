@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EuroSAT Satellite Classification - Space-Inspired Design System */
+
+@layer base {
+  :root {
+    /* Deep space dark theme - primary palette */
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    /* Orbital blue - primary accent */
+    --primary: 199 89% 48%;
+    --primary-foreground: 222 47% 6%;
+
+    /* Nebula purple - secondary accent */
+    --secondary: 263 70% 50%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Muted space grays */
+    --muted: 222 30% 15%;
+    --muted-foreground: 215 20% 55%;
+
+    /* Forest green accent for classification */
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Alert red for validation errors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Earth tones for satellite imagery */
+    --earth-brown: 30 50% 35%;
+    --earth-green: 142 60% 30%;
+    --earth-blue: 199 80% 45%;
+    --earth-sand: 42 55% 65%;
+    
+    /* Success green for valid uploads */
+    --success: 142 76% 40%;
+    --success-foreground: 210 40% 98%;
+
+    /* Warning amber */
+    --warning: 38 92% 50%;
+    --warning-foreground: 222 47% 6%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 15%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-orbital: linear-gradient(135deg, hsl(199, 89%, 48%) 0%, hsl(263, 70%, 50%) 100%);
+    --gradient-space: linear-gradient(180deg, hsl(222, 47%, 6%) 0%, hsl(222, 47%, 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(222, 47%, 10%) 0%, hsl(222, 47%, 7%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142, 76%, 36%) 0%, hsl(160, 84%, 39%) 100%);
+
+    /* Shadows */
+    --shadow-glow: 0 0 40px -10px hsl(199, 89%, 48%, 0.4);
+    --shadow-card: 0 4px 24px -4px hsl(222, 47%, 4%, 0.5);
+    --shadow-success: 0 0 30px -5px hsl(142, 76%, 40%, 0.3);
+  }
+
+  /* Keep light mode same as dark for this space theme */
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+    --card: 222 47% 9%;
+    --card-foreground: 210 40% 96%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 222 47% 6%;
+    --secondary: 263 70% 50%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 30% 15%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 30% 18%;
+    --input: 222 30% 15%;
+    --ring: 199 89% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.7);
+  }
+}
+
+@layer components {
+  /* Orbital glow effect */
+  .orbital-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Success glow */
+  .success-glow {
+    box-shadow: var(--shadow-success);
+  }
+
+  /* Animated gradient border */
+  .gradient-border {
+    position: relative;
+    background: hsl(var(--card));
+    border-radius: var(--radius);
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius) + 2px);
+    background: var(--gradient-orbital);
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+  /* Upload zone styles */
+  .upload-zone {
+    background: var(--gradient-card);
+    border: 2px dashed hsl(var(--border));
+    transition: all 0.3s ease;
+  }
+
+  .upload-zone:hover,
+  .upload-zone.drag-over {
+    border-color: hsl(var(--primary));
+    box-shadow: var(--shadow-glow);
+  }
+
+  .upload-zone.valid {
+    border-color: hsl(var(--success));
+    box-shadow: var(--shadow-success);
+  }
+
+  .upload-zone.invalid {
+    border-color: hsl(var(--destructive));
+    box-shadow: 0 0 30px -5px hsl(var(--destructive) / 0.3);
+  }
+
+  /* Grid pattern overlay */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Animated pulse ring */
+  .pulse-ring {
+    animation: pulse-ring 2s infinite;
+  }
+
+  @keyframes pulse-ring {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+  }
+
+  /* Float animation */
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Scan line effect */
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.8), transparent);
+    animation: scan 3s linear infinite;
+  }
+
+  @keyframes scan {
+    0% {
+      top: 0;
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  /* Classification bar animation */
+  .classification-bar {
+    transition: width 1s ease-out;
+  }
+
+  /* Stats card */
+  .stats-card {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    backdrop-filter: blur(10px);
+  }
+}
+
+@layer utilities {
+  .text-gradient-orbital {
+    background: var(--gradient-orbital);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-orbital {
+    background: var(--gradient-orbital);
+  }
+
+  .bg-gradient-space {
+    background: var(--gradient-space);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-success {
+    background: var(--gradient-success);
+  }
+}
